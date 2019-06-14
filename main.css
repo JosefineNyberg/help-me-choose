@@ -33,7 +33,7 @@ input {
 
 }
 
-.goOption {
+.submit {
   width: 100px;
   font-size: 20px;
   background-color: pink;
@@ -42,4 +42,12 @@ input {
   outline-style: groove;
   outline-color: purple;
   color: purple;
+}
+
+.resultSection {
+  height: 300px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
 }
