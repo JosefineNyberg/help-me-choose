@@ -3,16 +3,43 @@
   <head>
     <meta charset=utf-8>
     <title>Help me choose</title>
+    <link href="./main.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <h1>Help me choose between...</h1>
     <img src="https://christianknoebel.com/sites/christianknoebel.com/files/styles/story_image/public/images/story/idk_0.png?itok=lRbdDrGA"/>
-    <div>
-      <div>
+    <div class="inputSection">
+      <div class="inputs">
         <input placeholder="Something"></input>
       </div>
-      <button>Add</button>
+      <button class="addOption">Add</button>
     </div>
-    <button>Go!</button>
+    <div class="resultSection"></div>
+    <button class="submit">GO!</button>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+      $(function() {
+        $('.resultSection').hide()
+
+        var add_option = function() {
+          $('.inputs').append('<input></input>')
+        }
+        $('.addOption').click(add_option)
+
+        var options = []
+        var submit = function() {
+          $('.inputSection').hide()
+          $('.resultSection').css('display', 'flex')
+          $('input').each(function() {
+            options.push($(this).val())
+          })
+          var winner = options[Math.floor(Math.random() * options.length)]
+            console.log(winner)
+            $('.resultSection').text(winner)
+          }
+          $('.submit').click(submit)
+      })
+    </script>
   </body>
 </html>
